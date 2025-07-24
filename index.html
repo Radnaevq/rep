@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Университет СТО</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #1e40af;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        nav {
+            background: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #1e40af;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            background: #1e40af;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #1e40af;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Университет СТО</h1>
+        <p>Современные технологии образования</p>
+    </header>
+
+    <nav>
+        <a href="#about">О нас</a>
+        <a href="#faculties">Факультеты</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>О нашем университете</h2>
+            <p>Мы предлагаем качественное образование с использованием современных технологий и индивидуальным подходом к каждому студенту.</p>
+        </section>
+
+        <section id="faculties">
+            <h2>Наши факультеты</h2>
+            <ul>
+                <li>Информационные технологии</li>
+                <li>Экономика и бизнес</li>
+                <li>Инженерные науки</li>
+                <li>Дизайн и искусство</li>
+            </ul>
+            <a href="#" class="btn">Подробнее</a>
+        </section>
+
+        <section id="contacts">
+            <h2>Контакты</h2>
+            <p>Адрес: г. Москва, ул. Образцова, 25</p>
+            <p>Телефон: +7 (495) 123-45-67</p>
+            <p>Email: info@university-sto.ru</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Университет СТО</p>
+    </footer>
+
+    <script>
+        // Простая форма обратной связи
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactSection = document.getElementById('contacts');
+            const form = document.createElement('form');
+            form.innerHTML = `
+                <h3>Обратная связь</h3>
+                <p><input type="text" placeholder="Ваше имя" style="width:100%;padding:8px;margin:5px 0;"></p>
+                <p><input type="email" placeholder="Ваш email" style="width:100%;padding:8px;margin:5px 0;"></p>
+                <p><textarea placeholder="Ваше сообщение" style="width:100%;padding:8px;margin:5px 0;"></textarea></p>
+                <button type="button" onclick="alert('Спасибо за ваше сообщение!')" 
+                    style="background:#1e40af;color:white;border:none;padding:8px 16px;border-radius:5px;">
+                    Отправить
+                </button>
+            `;
+            contactSection.appendChild(form);
+
+            // Регистрация Service Worker для PWA
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(() => console.log('Service Worker зарегистрирован'))
+                    .catch(err => console.log('Ошибка:', err));
+            }
+        });
+    </script>
+</body>
+</html>
